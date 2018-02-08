@@ -6,10 +6,13 @@ using namespace std;
 int main()
 {
     string Vardas;
-    char z = '*';
     cout << "Iveskite savo varda: ";
     cin >> Vardas;
-    std::cout << "The size of str is " << Vardas.length() << " bytes.\n";
+    int l = 13;
+	if (Vardas.back() == 's')
+    {
+    	l = 14;
+	}
 
     for (int i = 0; i < 5; i++)
     {
@@ -17,29 +20,30 @@ int main()
         {
             if(i == 2)
             {
-                cout << z << Vardas << z << endl;
-
+            	if (Vardas.back() == 's')
+            	{
+            		cout << "* " << "Sveikas, " << Vardas << "! *" << endl; 
+				}else
+				{
+					cout << "* " << "Sveika, " << Vardas << "! *" << endl; 
+				}
             } else
             {
-                for (int i = 0; i < Vardas.length()+2; i++)
+                for (int i = 0; i < Vardas.length()+l; i++)
                 {
-                    cout << z;
+                    cout << "*";
                 }
                 cout << endl;
             }
         } else
         {
-            cout << z;
-            for (int i = 0; i < Vardas.length(); i++)
+            cout << "*";
+            for (int i = 0; i < Vardas.length()+l-2; i++)
             {
                 cout << " ";
             }
-            cout << z << endl;
+            cout << "*" << endl;
         }
-
     }
-
-    cout << "Hello world!" << endl;
-    cin >> Vardas;
     return 0;
 }
